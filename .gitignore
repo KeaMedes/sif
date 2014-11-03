@@ -10,3 +10,6 @@
 
 # virtual machine crash logs
 hs_err_pid*
+
+# not include reference package
+!bcel-5.2.jar
