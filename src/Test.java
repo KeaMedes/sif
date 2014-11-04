@@ -1,4 +1,3 @@
-import java.util.List;
 
 /**
  * Outer tester of the whole project
@@ -6,10 +5,7 @@ import java.util.List;
  *
  */
 public class Test {
-public static void main(String[] args){
-	System.out.println("fuck you");
-	List<String> names = new HashList<String>();
-}
-private void geta(int a){
-}
+    public static void main(final String[] args){
+        System.out.println("fuck you -- testing");
+    }
 }
