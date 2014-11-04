@@ -1,8 +1,3 @@
-/**
- * FileLister.java
- * Copyright 2014 Qunhe Tech, all rights reserved.
- * Qunhe PROPRIETARY/CONFIDENTIAL, any form of usage is subject to approval.
- */
 package util;
 
 import java.io.File;

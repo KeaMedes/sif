@@ -1,8 +1,3 @@
-/**
- * FileListerTest.java
- * Copyright 2014 Qunhe Tech, all rights reserved.
- * Qunhe PROPRIETARY/CONFIDENTIAL, any form of usage is subject to approval.
- */
 package util;
 
 import java.io.File;
@@ -24,7 +19,10 @@ public class FileListerTest {
     @Test
     public void testListFilesPath() throws IOException {
         final Path root = Paths.get("D://sif");
-        FileLister.listFiles(root);
+        final List<File> files = FileLister.listFiles(root);
+        for (final File file : files){
+            System.out.println(file.getAbsolutePath());
+        }
     }
 
     @Test
@@ -32,6 +30,8 @@ public class FileListerTest {
         final Path root = Paths.get("D://sif");
         final List<File> files = new LinkedList<File>();
         FileLister.listFiles(root, files);
+        for (final File file : files){
+            System.out.println(file.getAbsolutePath());
+        }
     }
-
 }
