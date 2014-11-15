@@ -1,0 +1,3 @@
+enum ArgumentType{
+	CP_NO_ARGS,  CP_MID_ARGS, CP_MID_POS_ARGS, CP_MN_ARGS, CP_CN_ARGS, CP_CN_MN_ARGS	
+}
