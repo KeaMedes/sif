@@ -64,19 +64,20 @@ public class SifFilter {
 	 * 
 	 * @param constPool
 	 * @param instruction
-	 * @param filterByteCode
+	 * @param fParam
 	 * @return
 	 */
 	public static boolean filterByByteCode(ConstantPool constPool,
-			Instruction instruction, String filterByteCode) {
+			Instruction instruction, FilterParam fParam) {
 		LOG.debug("source instruction bytecode : "
 				+ instruction.toString(constPool) + " target filterByteCode : "
-				+ filterByteCode);
-		if (filterByteCode == null || filterByteCode.equals("*")
-				|| filterByteCode.isEmpty()) {
+				+ fParam);
+		if (fParam == null || fParam.getByteCode() == null
+				|| fParam.getByteCode().equals("*")
+				|| fParam.getByteCode().isEmpty()) {
 			return true;
 		}
-		if (instruction.toString(constPool).matches(filterByteCode)) {
+		if (instruction.toString(constPool).matches(fParam.getByteCode())) {
 			return true;
 		}
 		return false;

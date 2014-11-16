@@ -29,4 +29,7 @@ public class SifConfiguration {
 	public String getNewPathPrefix(){
 		return mProperties.getProperty("sif.data.newPathPrefix");
 	}
+	public Integer getThreadCount() {
+		return new Integer(mProperties.getProperty("sif.hardware.threadCounts"));
+	}
 }

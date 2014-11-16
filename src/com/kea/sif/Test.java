@@ -1,18 +1,9 @@
 package com.kea.sif;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.List;
-
-import org.apache.bcel.classfile.ClassParser;
-import org.apache.bcel.classfile.JavaClass;
-import org.apache.log4j.PropertyConfigurator;
 
 import com.kea.sif.instrumenter.InstrumenterMain;
-import com.kea.sif.util.ClassManager;
-import com.kea.sif.util.FileLister;
+
 
 
 /**

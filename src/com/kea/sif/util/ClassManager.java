@@ -11,6 +11,13 @@ public class ClassManager{
 	private static Logger LOG = Logger.getLogger(ClassManager.class);
 	private Map<String, String> mInheritMap =  new HashMap<String, String>(10);
 	private String[] STOP_CLASS_NAME_PREFIX = {"android."};
+	private static ClassManager classManager;
+	public static ClassManager getInstance(){
+		if (classManager == null){
+			classManager = new ClassManager();
+		}
+		return classManager;
+	}
 	/**
 	 * register a new class into the ClassManager
 	 * we encourage to do so in the project parse phase

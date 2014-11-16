@@ -9,7 +9,7 @@ public class InstrumenterParam {
 	private String[] mArguments;
 	private String[] mArgumentTypes;
 	private String mReturnType;
-	public String getmClassName() {
+	public String getClassName() {
 		return mClassName;
 	}
 	public void setClassName(String mClassName) {

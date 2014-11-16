@@ -9,6 +9,8 @@ import org.apache.bcel.generic.InstructionList;
 import org.apache.bcel.generic.Type;
 import org.apache.log4j.Logger;
 
+import com.kea.sif.data.InstrumenterParam;
+
 
 /**
  * generate user code caller
@@ -28,6 +30,10 @@ public class UserCodeCaller implements CompoundInstruction{
 		this.mSourceClassName = sourceClassName;
 		this.mSourceMethodName = sourceMethodName;
 	}
+	public UserCodeCaller(InstrumenterParam iParam) {
+		this.mSourceClassName = iParam.getClassName();
+		this.mSourceMethodName = iParam.getMethodName();
+	}
 	/**
 	 * generate the instruments for calling code
 	 * besides, it will change the const pool of cgen,
@@ -35,7 +41,7 @@ public class UserCodeCaller implements CompoundInstruction{
 	 * @param cgen
 	 * @return
 	 */
-	public boolean generateCallerCode(ClassGen cgen){
+	public UserCodeCaller generateCallerCode(ClassGen cgen){
 		mInstructionList = new InstructionList();
 		//while cgen is passed as construction-args of ifac
 		//every time you call functions of ifac, cgen may be
@@ -51,7 +57,7 @@ public class UserCodeCaller implements CompoundInstruction{
 		//invoke target method of object
 		mInstructionList.append(ifac.createInvoke(mSourceClassName, mSourceMethodName, Type.VOID, Type.NO_ARGS, Constants.INVOKEINTERFACE));
 		
-		return true;
+		return this;
 	}
 	@Override
 	public InstructionList getInstructionList() {
